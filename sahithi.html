@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sambu Sahithi – Portfolio</title>
+  <meta name="description" content="Portfolio of Sambu Sahithi, B.Tech student and Python learner." />
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #0f1720;
+      --text: #e6eef6;
+      --muted: #9aa9c0;
+      --accent: linear-gradient(135deg,#7c9cff,#2bd4bd);
+      --border: #16202b;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2,8,23,.6);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1100px,94%); margin:auto; }
+
+    /* HEADER */
+    header { position:sticky; top:0; z-index:100; backdrop-filter:blur(6px); background:rgba(8,12,18,.6); border-bottom:1px solid var(--border); }
+    .header-inner { height:70px; display:flex; align-items:center; justify-content:space-between; }
+    nav a { margin:0 14px; color:var(--muted); font-weight:600; padding:8px 10px; border-radius:8px; }
+    nav a:hover { background:rgba(255,255,255,.04); color:var(--text); }
+
+    /* HERO */
+    .hero { display:grid; grid-template-columns:1.2fr .8fr; gap:30px; padding:70px 0; }
+    .hero h1 { font-size:38px; margin:0 0 10px; }
+    .accent { background:var(--accent); -webkit-background-clip:text; color:transparent; font-weight:800; }
+    .lead { color:var(--muted); max-width:520px; }
+
+    .meta { list-style:none; padding:0; margin:18px 0; display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); }
+
+    .cta { display:flex; gap:12px; flex-wrap:wrap; }
+
+    /* BUTTONS */
+    .btn { padding:10px 16px; border-radius:10px; background:var(--panel); border:1px solid var(--border); font-weight:600; }
+    .btn.primary { background:linear-gradient(135deg,#7c9cff,#2bd4bd); color:#020617; }
+    .btn.ghost { background:transparent; color:var(--muted); }
+
+    /* PROFILE */
+    .profile { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:22px; text-align:center; box-shadow:var(--shadow); }
+    .avatar { width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid #2bd4bd; margin-bottom:14px; }
+
+    /* SECTIONS */
+    section { padding:60px 0; }
+    h2 { margin-bottom:18px; font-size:26px; }
+
+    .grid { display:grid; gap:16px; }
+    .grid-3 { grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.45); }
+
+    footer { border-top:1px solid var(--border); text-align:center; padding:26px 0; color:var(--muted); }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr; text-align:center;}
+      .cta{justify-content:center;}
+      nav{display:none;}
+    }
+  #typewriter{white-space:nowrap;}@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}.caret{display:inline-block;width:2px;height:1.1em;background:linear-gradient(180deg,#7c9cff,#2bd4bd);margin-left:6px;vertical-align:middle;animation:blink 1s infinite;} .cert-img{width:100%;border-radius:10px;margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <strong>Sambu Sahithi</strong>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HOME / HERO -->
+  <section id="home" class="hero">
+    <div>
+      <h1>Hi, I'm <span class="accent"><span id="typewriter"></span></span> 👋</h1>
+      <p class="lead">CS undergraduate student,learning by building simple projects and improving problemsolving skills.</p>
+
+    
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am a curious and self-driven Computer Science student with strong problem-solving skills who enjoys building real-world applications and continuously learning new technologies.
+      </p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+  <h2>Education</h2>
+  <div class="grid grid-3">
+
+    <div class="card">
+      <h3>B.Tech - CSE (pursuing)</h3>
+      <p><strong>College:</strong> Stanley College of Engineering and Technology</p>
+      <p><strong>CGPA:</strong> 8.7</p>
+
+    </div>
+
+    <div class="card">
+      <h3>Class XII (MPC)</h3>
+      <p><strong>College:</strong> Sri Chaitanya Junior College</p>
+      <p><strong>Grade:</strong> 97%</p>
+    </div>
+
+    <div class="card">
+      <h3>SSC</h3>
+      <p><strong>School:</strong> CNR Memorial High School</p>
+      <p><strong>Grade:</strong> 100%</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- SKILLS 
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid grid-3">
+      <div class="card">Java</div>
+      <div class="card">Python</div>
+      <div class="card">Logical Thinking</div>
+      <div class="card">Problem Solving</div>
+      <div class="card">HTML & CSS (Basics)</div>
+      <div class="card">Willingness to Learn</div>
+    </div>
+  </section> -->
+  <div class="grid grid-3">
+  <div class="card">Java</div>
+  <div class="card">Python</div>
+  <div class="card">Data Structures & Algorithms</div>
+  <div class="card">MySQL</div>
+  <div class="card">HTML & CSS</div>
+  <div class="card">Problem Solving</div>
+</div>
+
+
+  <!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid grid-3">
+
+    <div class="card">
+      <h3>Virtual Pet Simulator</h3>
+      <p>
+        A Python-based mini project that simulates a virtual pet using basic programming logic and user interaction.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Automatic Fire Extinguisher (Team Project)</h3>
+      <p>
+        An Arduino-based system that detects fire using sensors and activates an automatic extinguishing mechanism.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- CERTIFICATIONS 
+  <section id="certs">
+  <h2>Certifications</h2>
+  <div class="grid grid-3">
+    <div class="card"><p><strong>Python for Beginners</strong><br>NIELIT, Govt. of India (2026)</p></div>
+    <div class="card"><p><strong>Upcoming Certification</strong><br>Data / Software Domain</p></div>
+  </div>
+</section> -->
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <h2>Certifications</h2>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <p><strong>Data Structures</strong><br>Great Learning</p>
+    </div>
+
+    <div class="card">
+      <p>
+        <strong>Python for Beginners</strong><br>
+        NIELIT (Ministry of Electronics & IT, Govt. of India)
+      </p>
+    </div>
+
+
+    <div class="card">
+      <p><strong>Workshop Project Expo 2024</strong><br>
+    Stanley College of Engineering and Technology</p>
+    </div>
+  </div>
+</section>
+<!-- internship-->
+<section id="internship">
+  <h2>Internship</h2>
+  <div class="card">
+    <h3>Python Programming Intern – VaultofCodes</h3>
+    <p>
+      Gained hands-on experience with core Python concepts and developed a mini project to strengthen problem-solving skills.
+    </p>
+  </div>
+</section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:yourmail@gmail.com">sahithivenkatesh15@gmail.com</a></p>
+       <p>LinkedIn:<a href="https://www.linkedin.com/in/sahithi-sambu" target="_blank" rel="noopener"> linkedin.com/in/sahithi-sambu</a>
+      <p>Phone: <a href="tel:+916304119607">+91 6304119607</a></p>
+        <p>Location: Hyderabad, India</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Sambu Sahithi · Portfolio
+</footer>
+
+<script>
+const text="Sambu Sahithi";
+let i=0;
+function type(){
+ if(i<text.length){
+  document.getElementById('typewriter').innerHTML+=text.charAt(i);
+  i++;
+  setTimeout(type,120);
+ }
+}
+type();
+</script>
+</body>
+</html>
