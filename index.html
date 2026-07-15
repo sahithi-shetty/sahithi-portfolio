@@ -1,253 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sambu Sahithi – Portfolio</title>
-  <meta name="description" content="Portfolio of Sambu Sahithi, B.Tech student and Python learner." />
-
-  <style>
-    :root {
-      --bg: #0b0f14;
-      --panel: #0f1720;
-      --text: #e6eef6;
-      --muted: #9aa9c0;
-      --accent: linear-gradient(135deg,#7c9cff,#2bd4bd);
-      --border: #16202b;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(2,8,23,.6);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    }
-
-    * { box-sizing: border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); }
-    a { color:inherit; text-decoration:none; }
-    .container { width:min(1100px,94%); margin:auto; }
-
-    /* HEADER */
-    header { position:sticky; top:0; z-index:100; backdrop-filter:blur(6px); background:rgba(8,12,18,.6); border-bottom:1px solid var(--border); }
-    .header-inner { height:70px; display:flex; align-items:center; justify-content:space-between; }
-    nav a { margin:0 14px; color:var(--muted); font-weight:600; padding:8px 10px; border-radius:8px; }
-    nav a:hover { background:rgba(255,255,255,.04); color:var(--text); }
-
-    /* HERO */
-    .hero { display:grid; grid-template-columns:1.2fr .8fr; gap:30px; padding:70px 0; }
-    .hero h1 { font-size:38px; margin:0 0 10px; }
-    .accent { background:var(--accent); -webkit-background-clip:text; color:transparent; font-weight:800; }
-    .lead { color:var(--muted); max-width:520px; }
-
-    .meta { list-style:none; padding:0; margin:18px 0; display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); }
-
-    .cta { display:flex; gap:12px; flex-wrap:wrap; }
-
-    /* BUTTONS */
-    .btn { padding:10px 16px; border-radius:10px; background:var(--panel); border:1px solid var(--border); font-weight:600; }
-    .btn.primary { background:linear-gradient(135deg,#7c9cff,#2bd4bd); color:#020617; }
-    .btn.ghost { background:transparent; color:var(--muted); }
-
-    /* PROFILE */
-    .profile { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:22px; text-align:center; box-shadow:var(--shadow); }
-    .avatar { width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid #2bd4bd; margin-bottom:14px; }
-
-    /* SECTIONS */
-    section { padding:60px 0; }
-    h2 { margin-bottom:18px; font-size:26px; }
-
-    .grid { display:grid; gap:16px; }
-    .grid-3 { grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
-
-    .card { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,.45); }
-
-    footer { border-top:1px solid var(--border); text-align:center; padding:26px 0; color:var(--muted); }
-
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr; text-align:center;}
-      .cta{justify-content:center;}
-      nav{display:none;}
-    }
-  #typewriter{white-space:nowrap;}@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}.caret{display:inline-block;width:2px;height:1.1em;background:linear-gradient(180deg,#7c9cff,#2bd4bd);margin-left:6px;vertical-align:middle;animation:blink 1s infinite;} .cert-img{width:100%;border-radius:10px;margin-bottom:8px;}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahithi Sambu — Computer Science Undergraduate &amp; Software Developer</title>
+<meta name="description" content="Portfolio of Sahithi Sambu, a Computer Science undergraduate in Hyderabad building with Java, Python, and machine learning — from disease-prediction web apps to Arduino fire detectors.">
+<meta name="keywords" content="Sahithi Sambu, Software Developer, Computer Science, Java, Python, React, Machine Learning, Hyderabad">
+<meta name="author" content="Sahithi Sambu">
+<meta property="og:title" content="Sahithi Sambu — Computer Science Undergraduate">
+<meta property="og:description" content="Portfolio: projects, skills and experience in software development and applied ML.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2312203E'/%3E%3Ctext x='50' y='66' font-family='monospace' font-size='46' font-weight='700' fill='%232FD5C8' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
 
-<header>
-  <div class="container header-inner">
-    <strong>Sambu Sahithi</strong>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certifications</a>
-      <a href="#contact">Contact</a>
+<!-- Grid backdrop -->
+<div class="blueprint-grid" aria-hidden="true"></div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="Sahithi Sambu — home">
+      <span class="logo-mark">SS</span>
+      <span class="logo-text">sahithi<span class="dim">.dev</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" data-nav>About</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#education" data-nav>Education</a>
+      <a href="#contact" data-nav>Contact</a>
     </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <span class="switch-track"><span class="switch-thumb"></span></span>
+      </button>
+      <a href="#contact" class="btn btn-small btn-solid">Contact</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main class="container">
+<main id="top">
 
-  <!-- HOME / HERO -->
-  <section id="home" class="hero">
-    <div>
-      <h1>Hi, I'm <span class="accent"><span id="typewriter"></span></span> 👋</h1>
-      <p class="lead">CS undergraduate student,learning by building simple projects and improving problemsolving skills.</p>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="fig-label">FIG.00 — INDEX</p>
+        <h1 class="hero-name">Sahithi&nbsp;Sambu</h1>
+        <p class="hero-role">
+          <span class="typed" id="typedRole"></span><span class="cursor" aria-hidden="true">&nbsp;</span>
+        </p>
+        <p class="hero-tagline">
+          Computer Science undergraduate passionate about software development, problem solving, and building practical applications using Java, Python, and web technologies. Always eager to learn and contribute through internships and real-world projects.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-solid">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me →</a>
+        </div>
+        <div class="hero-meta">
+          <span>📍 Hyderabad, India</span>
+          <span class="dot">•</span>
+          <span>Open to SWE / Data internships</span>
+        </div>
+      </div>
 
-    
+      <div class="hero-diagram" aria-hidden="true">
+        <p class="fig-label diagram-label">SCHEMATIC — CORE STACK</p>
+        <svg id="circuitSvg" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- traces -->
+          <g class="traces" stroke-width="1.5">
+            <path class="trace" d="M210 210 L210 70" />
+            <path class="trace" d="M210 210 L350 130" />
+            <path class="trace" d="M210 210 L350 290" />
+            <path class="trace" d="M210 210 L210 350" />
+            <path class="trace" d="M210 210 L70 290" />
+            <path class="trace" d="M210 210 L70 130" />
+          </g>
+          <!-- core -->
+          <g class="node node-core">
+            <circle cx="210" cy="210" r="34" />
+            <text x="210" y="215" text-anchor="middle">SS</text>
+          </g>
+          <!-- satellites -->
+          <g class="node" data-i="1"><circle cx="210" cy="70" r="26"/><text x="210" y="75" text-anchor="middle">JAVA</text></g>
+          <g class="node" data-i="2"><circle cx="350" cy="130" r="26"/><text x="350" y="135" text-anchor="middle">PY</text></g>
+          <g class="node" data-i="3"><circle cx="350" cy="290" r="26"/><text x="350" y="295" text-anchor="middle">REACT</text></g>
+          <g class="node" data-i="4"><circle cx="210" cy="350" r="26"/><text x="210" y="355" text-anchor="middle">ML</text></g>
+          <g class="node" data-i="5"><circle cx="70" cy="290" r="26"/><text x="70" y="295" text-anchor="middle">SQL</text></g>
+          <g class="node" data-i="6"><circle cx="70" cy="130" r="26"/><text x="70" y="135" text-anchor="middle">IOT</text></g>
+        </svg>
+        <p class="diagram-caption">Power-on sequence — hover a node</p>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+      <span class="scroll-line"></span> SCROLL
+    </a>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a curious and self-driven Computer Science student with strong problem-solving skills who enjoys building real-world applications and continuously learning new technologies.
-      </p>
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="fig-label">FIG.01 — ABOUT</p>
+      <div class="about-grid">
+        <div class="about-copy">
+          <h2 class="section-title">Building things that solve everyday problems</h2>
+          <p>
+            I'm a Computer Science undergraduate at Stanley College of Engineering and Technology
+            for Women, Hyderabad, currently in my third year with a CGPA of 8.7/10. My work sits at
+            the intersection of applied machine learning and full-stack development — I like taking
+            a problem apart, from a raw symptom list to a burning candle, and building the smallest
+            system that reliably solves it.
+          </p>
+          <p>
+            Recent internships have had me shipping FastAPI and MongoDB modules for a live
+            election-campaign platform, and labelling and validating thousands of images for an ML
+            training pipeline. Outside coursework, I build my own side projects — a healthcare
+            recommendation app, a sensor-driven fire extinguisher — because the fastest way I learn
+            is by wiring something end to end.
+          </p>
+          <p>
+            I'm currently looking for internship or entry-level software engineering / data roles
+            where I can write production-grade code, learn from senior engineers, and keep asking "why."
+          </p>
+        </div>
+        <div class="about-readouts">
+          <div class="readout">
+            <span class="readout-value" data-count="8.7" data-decimal="true">0.0</span>
+            <span class="readout-label">CGPA / 10</span>
+          </div>
+          <div class="readout">
+            <span class="readout-value" data-count="2"></span>
+            <span class="readout-label">Internships</span>
+          </div>
+          <div class="readout">
+            <span class="readout-value" data-count="3">0</span>
+            <span class="readout-label">Flagship Projects</span>
+          </div>
+          <div class="readout">
+            <span class="readout-value" data-count="5">0</span>
+            <span class="readout-label">Certifications</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section id="education">
-  <h2>Education</h2>
-  <div class="grid grid-3">
+  <!-- ===== SKILLS ===== -->
+  <section class="section section-alt" id="skills">
+  <div class="section-inner">
+    <p class="fig-label">FIG.02 — SKILL MATRIX</p>
+    <h2 class="section-title">Technical Skills</h2>
 
-    <div class="card">
-      <h3>B.Tech - CSE (pursuing)</h3>
-      <p><strong>College:</strong> Stanley College of Engineering and Technology</p>
-      <p><strong>CGPA:</strong> 8.7</p>
+    <div class="skills-grid">
+
+      <!-- Languages -->
+      <div class="skill-card">
+        <h3>Programming Languages</h3>
+        <ul class="meter-list">
+          <li>
+            <div class="meter-row">
+              <span>Java</span>
+              <span class="meter-level">Intermediate</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:80%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>Python</span>
+              <span class="meter-level">Intermediate</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:80%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>C</span>
+              <span class="meter-level">Working Knowledge</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:65%"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Web -->
+      <div class="skill-card">
+        <h3>Web Technologies</h3>
+        <ul class="meter-list">
+          <li>
+            <div class="meter-row">
+              <span>HTML</span>
+              <span class="meter-level">Intermediate</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:75%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>CSS</span>
+              <span class="meter-level">Intermediate</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:75%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>JavaScript</span>
+              <span class="meter-level">Learning</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:60%"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Database & Tools -->
+      <div class="skill-card">
+        <h3>Database & Tools</h3>
+        <ul class="meter-list">
+          <li>
+            <div class="meter-row">
+              <span>MySQL</span>
+              <span class="meter-level">Working Knowledge</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:70%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>Git & GitHub</span>
+              <span class="meter-level">Working Knowledge</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:65%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>VS Code</span>
+              <span class="meter-level">Comfortable</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:80%"></div></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Core Concepts -->
+      <div class="skill-card">
+        <h3>Core Concepts</h3>
+        <ul class="meter-list">
+          <li>
+            <div class="meter-row">
+              <span>Data Structures</span>
+              <span class="meter-level">Working Knowledge</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:70%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>Machine Learning</span>
+              <span class="meter-level">Learning</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:65%"></div></div>
+          </li>
+
+          <li>
+            <div class="meter-row">
+              <span>Problem Solving</span>
+              <span class="meter-level">Strong</span>
+            </div>
+            <div class="meter"><div class="meter-fill" style="--w:85%"></div></div>
+          </li>
+        </ul>
+      </div>
 
     </div>
 
-    <div class="card">
-      <h3>Class XII (MPC)</h3>
-      <p><strong>College:</strong> Sri Chaitanya Junior College</p>
-      <p><strong>Grade:</strong> 97%</p>
-    </div>
+    <div class="soft-skills">
+      <span class="fig-label small">SOFT SKILLS</span>
 
-    <div class="card">
-      <h3>SSC</h3>
-      <p><strong>School:</strong> CNR Memorial High School</p>
-      <p><strong>Grade:</strong> 100%</p>
+      <div class="chip-row">
+        <span class="chip">Problem Solving</span>
+        <span class="chip">Communication</span>
+        <span class="chip">Teamwork</span>
+        <span class="chip">Adaptability</span>
+        <span class="chip">Quick Learner</span>
+        <span class="chip">Time Management</span>
+      </div>
     </div>
 
   </div>
 </section>
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <p class="fig-label">FIG.03 — PROJECTS</p>
+      <h2 class="section-title">Selected builds</h2>
+      <div class="project-grid">
 
-  <!-- SKILLS 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="grid grid-3">
-      <div class="card">Java</div>
-      <div class="card">Python</div>
-      <div class="card">Logical Thinking</div>
-      <div class="card">Problem Solving</div>
-      <div class="card">HTML & CSS (Basics)</div>
-      <div class="card">Willingness to Learn</div>
+        <article class="project-card">
+          <div class="project-card-top">
+    <span class="fig-label small">PROJECT / 01</span>
+
+    <div class="project-links">
+        <a href="https://carefind.onrender.com/" target="_blank" rel="noopener">
+            Live Demo ↗
+        </a>
+
+        <a href="https://github.com/sahithi-shetty/CareFind" target="_blank" rel="noopener">
+            GitHub ↗
+        </a>
     </div>
-  </section> -->
-  <div class="grid grid-3">
-  <div class="card">Java</div>
-  <div class="card">Python</div>
-  <div class="card">Data Structures & Algorithms</div>
-  <div class="card">MySQL</div>
-  <div class="card">HTML & CSS</div>
-  <div class="card">Problem Solving</div>
-</div>
+</div> <!-- THIS WAS MISSING -->
 
+<h3>CareFind</h3>
+          <h3>CareFind</h3>
+          <p class="project-sub">AI-powered disease prediction &amp; healthcare recommendation system</p>
+          <p class="project-problem">
+            <strong>Problem:</strong> people often don't know which specialist to see, or how urgent
+            a set of symptoms is, before they can get a doctor's opinion.
+          </p>
+          <p class="project-detail">
+            Built a healthcare web application that predicts likely diseases from user-entered
+            symptoms using a Scikit-learn model, then recommends nearby specialists and hospitals
+            through location-based search.
+          </p>
+          <ul class="project-achievements">
+            <li>Trained and served a symptom-to-diagnosis ML model behind a Flask API</li>
+            <li>Added specialist / hospital recommendation with location-based search</li>
+            <li>Full front end in HTML, CSS and JavaScript, data layer on MongoDB</li>
+          </ul>
+          <div class="tech-row">
+            <span class="chip mono">Python</span><span class="chip mono">Flask</span>
+            <span class="chip mono">MongoDB</span><span class="chip mono">Scikit-learn</span>
+            <span class="chip mono">JavaScript</span>
+          </div>
+        </article>
 
-  <!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="grid grid-3">
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="fig-label small">PROJECT / 02</span>
+            <div class="project-links">
+            </div>
+          </div>
+          <h3>Automatic Fire Extinguisher</h3>
+          <p class="project-sub">Sensor-driven fire detection &amp; control on Arduino</p>
+          <p class="project-problem">
+            <strong>Problem:</strong> small fires spread fast, and a response that waits for a human
+            to notice is often already too late.
+          </p>
+          <p class="project-detail">
+            Designed and built a sensor-based embedded system that detects fire in real time and
+            triggers an automatic suppression response, written and flashed entirely in the Arduino
+            IDE.
+          </p>
+          <ul class="project-achievements">
+            <li>Wired flame / heat sensors to a real-time detection loop</li>
+            <li>Designed a low-latency response mechanism in embedded C</li>
+            <li>Bridged coursework in circuits with hands-on embedded programming</li>
+          </ul>
+          <div class="tech-row">
+            <span class="chip mono">Arduino IDE</span><span class="chip mono">Embedded C</span>
+            <span class="chip mono">Sensors</span>
+          </div>
+        </article>
+        <article class="project-card">
+  <div class="project-card-top">
+    <span class="fig-label small">PROJECT / 03</span>
 
-    <div class="card">
-      <h3>Virtual Pet Simulator</h3>
-      <p>
-        A Python-based mini project that simulates a virtual pet using basic programming logic and user interaction.
+    <div class="project-links">
+      <a href="https://github.com/sahithi-shetty/smart-city-llm" target="_blank" rel="noopener">
+        GitHub ↗
+      </a>
+    </div>
+  </div>
+
+  <h3>Smart City LLM</h3>
+
+  <p class="project-sub">
+    AI-powered smart city assistant built during the Unleash LLM Innovation Challenge 2026.
+  </p>
+
+  <p class="project-problem">
+    <strong>Problem:</strong> Citizens often struggle to quickly access information about city services, public facilities, and civic issues.
+  </p>
+
+  <p class="project-detail">
+    Developed an LLM-based application that provides intelligent responses for city-related queries, making public information easier to access through natural language interaction.
+  </p>
+
+  <ul class="project-achievements">
+    <li>Built as part of the Unleash LLM Innovation Challenge 2026.</li>
+    <li>Applied prompt engineering and LLM integration to answer user queries.</li>
+    <li>Collaborated with a team using Git and GitHub.</li>
+  </ul>
+
+  <div class="tech-row">
+    <span class="chip mono">LLM</span>
+    <span class="chip mono">Python</span>
+    <span class="chip mono">GitHub</span>
+    <span class="chip mono">Prompt Engineering</span>
+  </div>
+</article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <p class="fig-label">FIG.04 — EXPERIENCE LOG</p>
+      <h2 class="section-title">Where I've worked</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="fig-label small">APR — JUN 2026</span>
+            <h3>AI Intern</h3>
+            <p class="timeline-org">Purview India Consulting and Services LLP</p>
+            <ul>
+              <li>Collaborated in a team to build an AI-powered Election Campaign Management System</li>
+              <li>Built and integrated AI, FastAPI, MongoDB, React and Twilio modules for campaign automation and voter interaction</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="fig-label small">MAR 2026</span>
+            <h3>AI Image Annotation Intern</h3>
+            <p class="timeline-org">Student Tribe (Colosseum CQ Solutions Pvt. Ltd.)</p>
+            <ul>
+              <li>Annotated 1,000+ images for machine learning dataset development</li>
+              <li>Validated labeled data to ensure quality and consistency for AI model training</li>
+            </ul>
+          </div>
+        </div>
+
+        
+
+      <div class="activity-log">
+        <span class="fig-label small">ALSO ON RECORD</span>
+        <ul class="activity-list">
+          <li><span class="mono-date">APR 2026</span> Attended the CS research symposium on AI/ML &amp; NLP — C-REx 2026, BITS Hyderabad</li>
+          <li><span class="mono-date">SEP 2025</span> Completed an IoT Bootcamp by NIELIT — hands-on cloud-connected sensors</li>
+          <li><span class="mono-date">DEC 2023</span> Volunteered at the Walk Against Hunger awareness walkathon</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="section" id="education">
+  <div class="section-inner">
+    <p class="fig-label">FIG.05 — EDUCATION</p>
+    <h2 class="section-title">Academic Journey</h2>
+
+    <div class="education-grid">
+
+      <article class="edu-card">
+        <span class="edu-year">2023 – Present</span>
+        <h3>B.E. in Computer Science & Engineering</h3>
+        <p class="edu-school">
+          Stanley College of Engineering & Technology for Women, Hyderabad
+        </p>
+        <p><strong>CGPA:</strong> 8.7 / 10</p>
+      </article>
+
+      <article class="edu-card">
+        <span class="edu-year">2021 – 2023</span>
+        <h3>Intermediate (MPC)</h3>
+        <p class="edu-school">
+          Sri Chaitanya Junior College
+        </p>
+        <p><strong>Score:</strong> 97%</p>
+      </article>
+
+      <article class="edu-card">
+        <span class="edu-year">2021</span>
+        <h3>Secondary School Certificate (SSC)</h3>
+        <p class="edu-school">
+          CNR Memorial High School
+        </p>
+        <p><strong>CGPA:</strong> 10.0 / 10</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+ <!-- ===== HACKATHONS ===== -->
+<section class="section" id="hackathons">
+  <div class="section-inner">
+    <p class="fig-label">FIG.06 — HACKATHONS</p>
+
+    <h2 class="section-title">Hackathons & Innovation Challenges</h2>
+
+    <div class="education-grid">
+
+      <!-- Hackathon 1 -->
+      <article class="edu-card">
+        <span class="edu-year">2026</span>
+
+        <h3>Unleash LLM Innovation Challenge</h3>
+
+        <p class="edu-school">
+          Meta × IndiaAI × AICTE × 1M1B
+        </p>
+
+        <ul>
+          <li>Built <strong>Smart City LLM</strong> with a team.</li>
+          <li>Developed an AI solution for urban services.</li>
+          <li>Participated in a national-level innovation challenge.</li>
+        </ul>
+
+        <div class="project-links">
+          <a href="YOUR_GITHUB_LINK" target="_blank">GitHub ↗</a>
+        </div>
+      </article>
+
+      <!-- Hackathon 2 -->
+      <article class="edu-card">
+        <span class="edu-year">2025</span>
+
+        <h3>Cardano Hackathon Asia – Web3 Edition</h3>
+
+        <p class="edu-school">
+          Cardano • Web3 • Asia Edition
+        </p>
+
+        <ul>
+          <li>Participated in the Cardano Web3 Innovation Challenge.</li>
+          <li>Developed a blockchain-based solution with a team.</li>
+          <li>Selected among the <strong>Top 112 shortlisted teams</strong>.</li>
+        </ul>
+
+        
+      </article>
+
+    </div>
+  </div>
+</section>
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="section section-alt" id="certifications">
+    <div class="section-inner">
+      <p class="fig-label">FIG.06 — CERTIFICATIONS</p>
+      <h2 class="section-title">Certifications &amp; recognitions</h2>
+      <div class="cert-grid">
+        <div class="cert-badge"><span class="cert-icon">◆</span><div><h4>Data Structures</h4><p>Great Learning</p></div></div>
+        <div class="cert-badge"><span class="cert-icon">◆</span><div><h4>Python for Beginners</h4><p>NIELIT</p></div></div>
+        <div class="cert-badge"><span class="cert-icon">◆</span><div><h4>C Language</h4><p>Merit Curve</p></div></div>
+        <div class="cert-badge"><span class="cert-icon">◆</span><div><h4>Introduction to Data Science</h4><p>Simplilearn</p></div></div>
+        <div class="cert-badge"><span class="cert-icon">◆</span><div><h4>Project Expo 2024</h4><p>Participant</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <p class="fig-label">FIG.07 — CONTACT</p>
+      <h2 class="section-title">Let's build something</h2>
+      <p class="contact-intro">
+        Open to internships, entry-level opportunities, and collaborations. Feel free to reach out if you'd like to connect.
       </p>
-    </div>
 
-    <div class="card">
-      <h3>Automatic Fire Extinguisher (Team Project)</h3>
-      <p>
-        An Arduino-based system that detects fire using sensors and activates an automatic extinguishing mechanism.
-      </p>
-    </div>
+      <div class="contact-grid">
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:sahithivenkatesh15@gmail.com">
+            <span class="contact-icon">✉</span>
+            <span><span class="contact-label">Email</span><span class="contact-value">sahithivenkatesh15@gmail.com</span></span>
+          </a>
+          <a class="contact-link" href="tel:+916304119607">
+            <span class="contact-icon">☎</span>
+            <span><span class="contact-label">Phone</span><span class="contact-value">+91 6304 119 607</span></span>
+          </a>
+          <a class="contact-link" href="https://linkedin.com/in/sahithi-sambu" target="_blank" rel="noopener">
+            <span class="contact-icon">in</span>
+            <span><span class="contact-label">LinkedIn</span><span class="contact-value">/in/sahithi-sambu</span></span>
+          </a>
+          <a class="contact-link" href="https://github.com/sahithi-shetty" target="_blank" rel="noopener">
+            <span class="contact-icon">⌥</span>
+            <span><span class="contact-label">GitHub</span><span class="contact-value">/sahithi-shetty</span></span>
+          </a>
+        </div>
 
-  </div>
-</section>
-
-
-  <!-- CERTIFICATIONS 
-  <section id="certs">
-  <h2>Certifications</h2>
-  <div class="grid grid-3">
-    <div class="card"><p><strong>Python for Beginners</strong><br>NIELIT, Govt. of India (2026)</p></div>
-    <div class="card"><p><strong>Upcoming Certification</strong><br>Data / Software Domain</p></div>
-  </div>
-</section> -->
-<!-- CERTIFICATIONS -->
-<section id="certs">
-  <h2>Certifications</h2>
-
-  <div class="grid grid-3">
-    <div class="card">
-      <p><strong>Data Structures</strong><br>Great Learning</p>
-    </div>
-
-    <div class="card">
-      <p>
-        <strong>Python for Beginners</strong><br>
-        NIELIT (Ministry of Electronics & IT, Govt. of India)
-      </p>
-    </div>
-
-
-    <div class="card">
-      <p><strong>Workshop Project Expo 2024</strong><br>
-    Stanley College of Engineering and Technology</p>
-    </div>
-  </div>
-</section>
-<!-- internship-->
-<section id="internship">
-  <h2>Internship</h2>
-  <div class="card">
-    <h3>Python Programming Intern – VaultofCodes</h3>
-    <p>
-      Gained hands-on experience with core Python concepts and developed a mini project to strengthen problem-solving skills.
-    </p>
-  </div>
-</section>
-
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:yourmail@gmail.com">sahithivenkatesh15@gmail.com</a></p>
-       <p>LinkedIn:<a href="https://www.linkedin.com/in/sahithi-sambu" target="_blank" rel="noopener"> linkedin.com/in/sahithi-sambu</a>
-      <p>Phone: <a href="tel:+916304119607">+91 6304119607</a></p>
-        <p>Location: Hyderabad, India</p>
+        <form class="contact-form" id="contactForm">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required placeholder="Your name">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required placeholder="you@example.com">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="4" required placeholder="What are you building?"></textarea>
+          <button type="submit" class="btn btn-solid full-width">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  © 2026 Sambu Sahithi · Portfolio
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 Sahithi Sambu. Built from scratch, wire by wire.</span>
+    <div class="footer-social">
+      <a href="https://github.com/sahithi-shetty" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+      <a href="https://linkedin.com/in/sahithi-sambu" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+      <a href="mailto:sahithivenkatesh15@gmail.com" aria-label="Email">Email</a>
+    </div>
+  </div>
 </footer>
 
-<script>
-const text="Sambu Sahithi";
-let i=0;
-function type(){
- if(i<text.length){
-  document.getElementById('typewriter').innerHTML+=text.charAt(i);
-  i++;
-  setTimeout(type,120);
- }
-}
-type();
-</script>
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+<script src="script.js"></script>
 </body>
 </html>
