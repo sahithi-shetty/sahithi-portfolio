@@ -246,9 +246,9 @@ input, textarea { font: inherit; color: inherit; }
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
   align-items: center;
 }
 .hero-name {
@@ -390,7 +390,23 @@ input, textarea { font: inherit; color: inherit; }
 /* ==========================================================================
    SKILLS
    ========================================================================== */
-.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 40px; }
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+@media (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 .skill-card {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -441,7 +457,10 @@ input, textarea { font: inherit; color: inherit; }
 /* ==========================================================================
    PROJECTS
    ========================================================================== */
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.project-grid {
+    margin-left: 0;
+    margin-right: 0;
+}
 .project-card {
   background: var(--paper-alt);
   border: 1px solid var(--line);
@@ -775,5 +794,91 @@ input, textarea { font: inherit; color: inherit; }
 @media(max-width:900px){
     #hackathons .education-grid{
         grid-template-columns:1fr;
+    }
+}
+/* Profile Photo */
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    display: block;
+    margin: 0 auto 20px;
+}
+/* Profile Photo */
+@media (min-width: 768px) {
+    .hero-inner {
+        grid-template-columns: 1.15fr 0.85fr;
+    }
+}
+/* ==========================================================================
+   EDUCATION TABLE - THEME STYLING
+   ========================================================================== */
+
+.education-grid {
+    display: block;
+}
+
+.education-grid .table-responsive {
+    width: 100%;
+    margin-top: 30px !important;
+}
+
+.education-grid table {
+    width: 100%;
+    margin-bottom: 0;
+    background: transparent !important;
+    color: var(--ink) !important;
+    border-color: var(--line) !important;
+}
+
+.education-grid table thead {
+    background: transparent !important;
+}
+
+.education-grid table th,
+.education-grid table td {
+    background: transparent !important;
+    color: var(--ink) !important;
+    border-color: var(--line) !important;
+    padding: 16px;
+}
+
+.education-grid table th {
+    font-weight: 600;
+}
+
+.education-grid table tbody tr:hover td {
+    background: var(--paper-alt) !important;
+}
+@media (max-width: 767px) {
+    .education-grid table {
+        min-width: 650px;
+    }
+
+    .education-grid .table-responsive {
+        overflow-x: auto;
+    }
+}
+/* Make Bootstrap project card titles visible */
+.project-card h3 {
+    color: var(--ink) !important;
+}
+/* Space between project cards */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.project-grid .project-card {
+    width: 100%;
+    margin: 0;
+}
+@media (max-width: 720px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }

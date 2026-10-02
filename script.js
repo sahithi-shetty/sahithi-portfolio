@@ -152,22 +152,72 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 counters.forEach(el => counterObserver.observe(el));
 
+
 // ==========================================================================
-// CONTACT FORM (client-side only — opens mail client with prefilled content)
+// CONTACT FORM VALIDATION
 // ==========================================================================
+
 const contactForm = document.getElementById('contactForm');
 const formNote = document.getElementById('formNote');
 
 contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('cf-name').value.trim();
-  const email = document.getElementById('cf-email').value.trim();
-  const message = document.getElementById('cf-message').value.trim();
+    e.preventDefault();
 
-  const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-  window.location.href = `mailto:sahithivenkatesh15@gmail.com?subject=${subject}&body=${body}`;
+    const name = document.getElementById('cf-name');
+    const email = document.getElementById('cf-email');
+    const message = document.getElementById('cf-message');
 
-  formNote.textContent = 'Opening your email client…';
-  contactForm.reset();
+    const nameValue = name.value.trim();
+    const emailValue = email.value.trim();
+    const messageValue = message.value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Clear previous message
+    formNote.textContent = '';
+    formNote.style.color = '';
+
+    // Name validation
+    if (nameValue.length < 2) {
+        formNote.textContent = 'Please enter a valid name.';
+        formNote.style.color = '#dc3545';
+        name.focus();
+        return;
+    }
+
+    // Email validation
+    if (!emailPattern.test(emailValue)) {
+        formNote.textContent = 'Please enter a valid email address.';
+        formNote.style.color = '#dc3545';
+        email.focus();
+        return;
+    }
+
+    // Message validation
+    if (messageValue.length < 10) {
+        formNote.textContent =
+            'Message must contain at least 10 characters.';
+        formNote.style.color = '#dc3545';
+        message.focus();
+        return;
+    }
+
+    // Success message
+    formNote.textContent =
+        'Message validated successfully! Opening your email client...';
+
+    formNote.style.color = 'var(--accent)';
+
+    const subject = encodeURIComponent(
+        `Portfolio contact from ${nameValue}`
+    );
+
+    const body = encodeURIComponent(
+        `${messageValue}\n\n— ${nameValue} (${emailValue})`
+    );
+
+    window.location.href =
+        `mailto:sambusahithi1508@gmail.com?subject=${subject}&body=${body}`;
+
+    contactForm.reset();
 });

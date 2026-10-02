@@ -14,6 +14,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+>
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
@@ -22,7 +26,7 @@
 <div class="blueprint-grid" aria-hidden="true"></div>
 
 <!-- ===== NAV ===== -->
-<header class="nav" id="nav">
+<header class="nav navbar" id="nav">
   <div class="nav-inner">
     <a href="#top" class="logo" aria-label="Sahithi Sambu — home">
       <span class="logo-mark">SS</span>
@@ -42,7 +46,6 @@
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
         <span class="switch-track"><span class="switch-thumb"></span></span>
       </button>
-      <a href="#contact" class="btn btn-small btn-solid">Contact</a>
       <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -56,6 +59,11 @@
   <section class="hero" id="hero">
     <div class="hero-inner">
       <div class="hero-copy">
+          <img
+    src="assets/sahithi.jpeg"
+    alt="Sahithi Sambu"
+    class="profile-photo"
+  >
         <p class="fig-label"> INDEX</p>
         <h1 class="hero-name">Sahithi&nbsp;Sambu</h1>
         <p class="hero-role">
@@ -117,7 +125,7 @@
           <h2 class="section-title">Building things that solve everyday problems</h2>
           <p>
             I'm a Computer Science undergraduate at Stanley College of Engineering and Technology
-            for Women, Hyderabad, currently in my third year with a CGPA of 8.7/10. My work sits at
+            for Women, Hyderabad, currently in my third year with a CGPA of 8.6/10. My work sits at
             the intersection of applied machine learning and full-stack development — I like taking
             a problem apart, from a raw symptom list to a burning candle, and building the smallest
             system that reliably solves it.
@@ -136,7 +144,7 @@
         </div>
         <div class="about-readouts">
           <div class="readout">
-            <span class="readout-value" data-count="8.7" data-decimal="true">0.0</span>
+            <span class="readout-value" data-count="8.6" data-decimal="true">0.0</span>
             <span class="readout-label">CGPA / 10</span>
           </div>
           <div class="readout">
@@ -184,13 +192,6 @@
             <div class="meter"><div class="meter-fill" style="--w:80%"></div></div>
           </li>
 
-          <li>
-            <div class="meter-row">
-              <span>C</span>
-              <span class="meter-level">Working Knowledge</span>
-            </div>
-            <div class="meter"><div class="meter-fill" style="--w:65%"></div></div>
-          </li>
         </ul>
       </div>
 
@@ -306,9 +307,9 @@
     <div class="section-inner">
       <p class="fig-label">PROJECTS</p>
       <h2 class="section-title">Selected builds</h2>
-      <div class="project-grid">
+      <div class="project-grid row g-4">
 
-        <article class="project-card">
+        <article class="project-card card col-12 col-md-6">
           <div class="project-card-top">
     <span class="fig-label small">PROJECT / 01</span>
 
@@ -322,8 +323,6 @@
         </a>
     </div>
 </div> <!-- THIS WAS MISSING -->
-
-<h3>CareFind</h3>
           <h3>CareFind</h3>
           <p class="project-sub">AI-powered disease prediction &amp; healthcare recommendation system</p>
           <p class="project-problem">
@@ -347,7 +346,7 @@
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card card col-12 col-md-6">
           <div class="project-card-top">
             <span class="fig-label small">PROJECT / 02</span>
             <div class="project-links">
@@ -374,7 +373,7 @@
             <span class="chip mono">Sensors</span>
           </div>
         </article>
-        <article class="project-card">
+        <article class="project-card card col-12 col-md-6">
   <div class="project-card-top">
     <span class="fig-label small">PROJECT / 03</span>
 
@@ -449,17 +448,6 @@
             </ul>
           </div>
         </div>
-
-        
-
-      <div class="activity-log">
-        <span class="fig-label small">ALSO ON RECORD</span>
-        <ul class="activity-list">
-          <li><span class="mono-date">APR 2026</span> Attended the CS research symposium on AI/ML &amp; NLP — C-REx 2026, BITS Hyderabad</li>
-          <li><span class="mono-date">SEP 2025</span> Completed an IoT Bootcamp by NIELIT — hands-on cloud-connected sensors</li>
-          <li><span class="mono-date">DEC 2023</span> Volunteered at the Walk Against Hunger awareness walkathon</li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -471,32 +459,43 @@
 
     <div class="education-grid">
 
-      <article class="edu-card">
-        <span class="edu-year">2023 – Present</span>
-        <h3>B.E. in Computer Science & Engineering</h3>
-        <p class="edu-school">
-          Stanley College of Engineering & Technology for Women, Hyderabad
-        </p>
-        <p><strong>CGPA:</strong> 8.7 / 10</p>
-      </article>
+    
+      <!-- Education Table -->
+<div class="table-responsive mt-5">
+  <table class="table table-bordered table-hover align-middle">
+    <thead>
+      <tr>
+        <th scope="col">Qualification</th>
+        <th scope="col">Institution</th>
+        <th scope="col">Year</th>
+        <th scope="col">Result</th>
+      </tr>
+    </thead>
 
-      <article class="edu-card">
-        <span class="edu-year">2021 – 2023</span>
-        <h3>Intermediate (MPC)</h3>
-        <p class="edu-school">
-          Sri Chaitanya Junior College
-        </p>
-        <p><strong>Score:</strong> 97%</p>
-      </article>
+    <tbody>
+      <tr>
+        <td>B.E. Computer Science & Engineering</td>
+        <td>Stanley College of Engineering & Technology for Women</td>
+        <td>2023 – Present</td>
+        <td>8.6 / 10 CGPA</td>
+      </tr>
 
-      <article class="edu-card">
-        <span class="edu-year">2021</span>
-        <h3>Secondary School Certificate (SSC)</h3>
-        <p class="edu-school">
-          CNR Memorial High School
-        </p>
-        <p><strong>CGPA:</strong> 10.0 / 10</p>
-      </article>
+      <tr>
+        <td>Intermediate (MPC)</td>
+        <td>Sri Chaitanya Junior College</td>
+        <td>2021 – 2023</td>
+        <td>97%</td>
+      </tr>
+
+      <tr>
+        <td>SSC</td>
+        <td>CNR Memorial High School</td>
+        <td>2021</td>
+        <td>10.0 / 10 CGPA</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
     </div>
   </div>
@@ -580,9 +579,9 @@
 
       <div class="contact-grid">
         <div class="contact-links">
-          <a class="contact-link" href="mailto:sahithivenkatesh15@gmail.com">
+          <a class="contact-link" href="mailto:sambusahithi1508@gmail.com">
             <span class="contact-icon">✉</span>
-            <span><span class="contact-label">Email</span><span class="contact-value">sahithivenkatesh15@gmail.com</span></span>
+            <span><span class="contact-label">Email</span><span class="contact-value">sambusahithi1508@gmail.com</span></span>
           </a>
           <a class="contact-link" href="tel:+916304119607">
             <span class="contact-icon">☎</span>
@@ -599,15 +598,47 @@
         </div>
 
         <form class="contact-form" id="contactForm">
-          <label for="cf-name">Name</label>
-          <input type="text" id="cf-name" name="name" required placeholder="Your name">
-          <label for="cf-email">Email</label>
-          <input type="email" id="cf-email" name="email" required placeholder="you@example.com">
-          <label for="cf-message">Message</label>
-          <textarea id="cf-message" name="message" rows="4" required placeholder="What are you building?"></textarea>
-          <button type="submit" class="btn btn-solid full-width">Send Message</button>
-          <p class="form-note" id="formNote"></p>
-        </form>
+
+  <label for="cf-name">Name</label>
+  <input
+    type="text"
+    id="cf-name"
+    name="name"
+    class="form-control"
+    required
+    placeholder="Your name"
+  >
+
+  <label for="cf-email">Email</label>
+  <input
+    type="email"
+    id="cf-email"
+    name="email"
+    class="form-control"
+    required
+    placeholder="you@example.com"
+  >
+
+  <label for="cf-message">Message</label>
+  <textarea
+    id="cf-message"
+    name="message"
+    class="form-control"
+    rows="4"
+    required
+    placeholder="What are you building?"
+  ></textarea>
+
+  <button
+    type="submit"
+    class="btn btn-solid full-width"
+  >
+    Send Message
+  </button>
+
+  <p class="form-note" id="formNote"></p>
+
+</form>
       </div>
     </div>
   </section>
@@ -620,13 +651,16 @@
     <div class="footer-social">
       <a href="https://github.com/sahithi-shetty" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
       <a href="https://linkedin.com/in/sahithi-sambu" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-      <a href="mailto:sahithivenkatesh15@gmail.com" aria-label="Email">Email</a>
+      <a href="mailto:sambusahithi1508@gmail.com" aria-label="Email">Email</a>
     </div>
   </div>
 </footer>
 
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
-
+<!-- Bootstrap JavaScript -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
 <script src="script.js"></script>
 </body>
 </html>
